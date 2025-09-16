@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 const persistKey = 'flashcards-v1';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 export const useDeck = create((set, get) => ({
   cards: [],
@@ -12,7 +13,7 @@ export const useDeck = create((set, get) => ({
   loadDeck: async (params) => {
     set({ loading: true, error: null });
     try {
-      const r = await fetch('http://localhost:3001/api/generate', {
+      const r = await fetch(`${API_BASE}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type':'application/json' },
         body: JSON.stringify(params)
@@ -56,7 +57,7 @@ export const useDeck = create((set, get) => ({
     if (!cards.length) return;
     const target = cards[current];
     try {
-      const r = await fetch('http://localhost:3001/api/regenerate', {
+      const r = await fetch(`${API_BASE}/api/regenerate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ topic: lastTopic || target.tag || 'general', level, tag: target.tag })
