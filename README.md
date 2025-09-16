@@ -2,6 +2,8 @@
 
 An AI-powered flashcard web app built with **React (Vite)** and **Zustand**, deployed on **Vercel** with serverless functions. It generates adaptive flashcards using the OpenAI API and supports spaced repetition (Leitner system) with persistence in `localStorage`.
 
+Try the app at https://flashcard-app-iota-ten.vercel.app/
+
 ## ✨ Features
 - 🎴 Generate flashcards on any topic using GPT models
 - 🔄 Regenerate weak cards with one click
