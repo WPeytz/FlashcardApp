@@ -1,0 +1,30 @@
+:root { font-family: system-ui, Inter, Arial; color-scheme: light dark; }
+body { margin: 0; display: grid; place-items: start center; min-height: 100dvh; background: #0b1020; color:#e6eefc; }
+.container { width: min(900px, 92vw); padding: 24px; }
+h1 { margin: 10px 0 14px; letter-spacing: .3px; }
+
+.controls { display: grid; grid-template-columns: 1fr auto auto auto; gap: 8px; margin-bottom: 12px; }
+.controls input, .controls select, .controls button {
+  padding: 10px 12px; border-radius: 10px; border: 1px solid #243863; background: #121a33; color:#e6eefc;
+}
+.controls button { background:#2ec4b6; color:#0b1020; border-color:#2ec4b6; font-weight:600; cursor:pointer; }
+
+.placeholder { margin: 30px 0; opacity:.7; }
+
+.card-wrap { margin-top: 10px; }
+.card { position: relative; width: 100%; min-height: 220px; perspective: 1000px; cursor: pointer; }
+.card > div { position: absolute; inset: 0; border: 1px solid #243863; border-radius: 16px; padding: 18px; background: #13224a; backface-visibility: hidden; transition: transform .5s ease; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+.card .back { transform: rotateY(180deg); background:#1b2f5c; }
+.card.flipped .front { transform: rotateY(180deg); }
+.card.flipped .back { transform: rotateY(0deg); }
+
+.tag { font-size: 12px; opacity: .8; }
+.hint, .meta, .tap { opacity: .75; font-size: 14px; margin-top: 10px; }
+.actions { display: flex; gap: 10px; margin-top: 16px; }
+.actions button { padding: 10px 14px; border-radius: 10px; border: 1px solid transparent; font-weight: 600; cursor: pointer; }
+.actions .wrong { background:#ff6b6b; color:#0b1020; }
+.actions .right { background:#51cf66; color:#0b1020; }
+
+.status { display: flex; gap: 16px; margin: 10px 0 6px; opacity:.85; }
+.error { background:#ff6b6b33; border: 1px solid #ff6b6b66; padding: 10px 12px; border-radius: 10px; margin: 10px 0; }
+footer { margin-top: 26px; opacity:.7; }
